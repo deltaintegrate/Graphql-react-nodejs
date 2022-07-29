@@ -1,8 +1,8 @@
 import { GraphQLObjectType, GraphQLID, GraphQLString, GraphQLFloat } from "graphql";
 
 export const NumerosType = new GraphQLObjectType({
-    name: "Numero",
-    fields: () =>({
+    name: "Numeros",
+    fields: () => ({
         id: {GraphQLID},
         Result: {GraphQLFloat},
     })

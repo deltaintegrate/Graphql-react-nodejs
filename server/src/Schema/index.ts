@@ -1,8 +1,10 @@
 import { GraphQLSchema, GraphQLObjectType } from "graphql";
-
+import {GET_ALL_NUMEROS} from './Queries/Numeros';
 const RootQuery = new GraphQLObjectType({
     name:"RootQuery",
-    fields: {}
+    fields: {
+        getAllNumeros: GET_ALL_NUMEROS
+    }
 })
 
 const Mutation = new GraphQLObjectType({
