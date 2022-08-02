@@ -1,6 +1,6 @@
 import { GraphQLSchema, GraphQLObjectType, GraphQLInputObjectType } from 'graphql';
 import { NUMEROS } from './Queries/Numeros';
-import { CREATE_NUMBER } from './Mutations/Numeros.mutations';
+import { CREATE_NUMBER, DELETE_ALL_NUMBER, DELETE_NUMBER } from './Mutations/Numeros.mutations';
 import { GET_ALL_NUMEROS, GET_NUMERO } from './Queries/Numeros.queries';
 
 
@@ -16,7 +16,9 @@ const RootQuery = new GraphQLObjectType({
 const Mutation = new GraphQLObjectType({
     name: 'Mutation',
     fields: {
-        createNumber: CREATE_NUMBER
+        createNumber: CREATE_NUMBER,
+        deleteNumber: DELETE_NUMBER,
+        deleteAllNumber: DELETE_ALL_NUMBER
     },
 })
 
