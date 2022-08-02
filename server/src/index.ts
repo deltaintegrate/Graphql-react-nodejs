@@ -1,33 +1,15 @@
-import express from 'express';
-import { graphqlHTTP } from "express-graphql";
-import { schema } from "./Schema"
-import cors from 'cors';
-import { createConnection } from "typeorm";
+import  app  from './app';
+import { connectDB } from './database/db';
 
-const main = async () => {
+async function main() {
+    try {
+        await connectDB();
+        app.listen(3001);
+        console.log("LISTEN PORT 3001");
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
 
-    await createConnection ({
-        type: "mysql",
-        database: "graphqlCRUD",
-        username: "root",
-        password: "",
-        logging: true,
-        synchronize: false,
-        entities: [],
-    })
-    const app = express();
-    app.use(cors());
-    app.use(express.json());
-    app.use("/graphql", graphqlHTTP({
-        schema,
-        graphiql: true
-    }))
-
-    app.listen(3001,() => {
-        console.log("server running port 3001");
-    })
-};
-
-main().catch((err) =>{
-    console.log(err);
-})
+main();

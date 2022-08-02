@@ -1,10 +1,6 @@
-import {GraphQLList} from 'graphql';
-import {NumerosType} from '../TypeDefs/Numeros';
+import { GraphQLFloat } from 'graphql'
 
-
-export const GET_ALL_NUMEROS = {
-    type: new GraphQLList (NumerosType),
-    resolve() {
-        return []
-    }
+export const NUMEROS = {
+    type: GraphQLFloat,
+    resolve: () => 532
 }
