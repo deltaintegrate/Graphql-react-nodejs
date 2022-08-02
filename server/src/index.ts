@@ -1,11 +1,13 @@
 import  app  from './app';
 import { connectDB } from './database/db';
 
+import { PORT } from './config';
+
 async function main() {
     try {
         await connectDB();
-        app.listen(3001);
-        console.log("LISTEN PORT 3001");
+        app.listen(PORT);
+        console.log("LISTEN PORT ",PORT);
     } catch (error) {
         console.log(error);
         
