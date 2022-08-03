@@ -1,4 +1,5 @@
 {
+
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
     "build": "tsc -p .",
